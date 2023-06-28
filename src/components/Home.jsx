@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroImage from '../assets/heroImagecropped.jpg';
+import HeroImage from '../assets/HeroImageCropped.jpg';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 const Home = () => {
   return (
