@@ -8,7 +8,7 @@ import reactWeather from '../assets/portfolio/reactWeather.jpg';
 import ceuCatalog from '../assets/portfolio/CeuCatelog2fixed.png';
 import goGame from '../assets/portfolio/Play-1024x647.png';
 import publicPayment from '../assets/portfolio/paymentsearch-1024x798.png';
-
+import {Link} from 'react-router-dom';
 
 const Portfolio = () => {
 
@@ -16,16 +16,19 @@ const Portfolio = () => {
         {
             id:1,
             src: ceuCatalog,
+            link: "/publicaccess",
             bt1Label: 'Live Public',
             bt2Label: 'none',
             bt1Link: 'https://ceucatalog.age.ohio.gov/',
             
         },{
             id:2,
-            src: publicPayment
+            src: publicPayment,
+            link: "/publicpayment"
         },{
             id:3,
             src:  goGame,
+            link: "/azurego"
 
         },{
             id:4,
@@ -49,13 +52,16 @@ const Portfolio = () => {
             </div>
             <div className='grid  grid-flow-row gap-8  md:grid-cols-2  '>
 
-                {portfolios.map(({id,src}) => 
+                {portfolios.map(({id,src,link}) => 
                     (
                         <div key={id} className=' shadow-md shadow-gray-600 rounded-lg'>   
                         <img src={src} alt="" className=' rounded-md duration-200 hover:scale-105'/>
                         <div className='flex items-center justify-center '>
                        {/*    {bt1Label &&  <button  className=' w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>{bt1Label}</button> } */}
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Show me more</button>
+                       <Link to={link} className=' w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>
+          Show me more
+          </Link>
+                    {/*         <button className=' w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Show me more</button> */}
                         </div>
                     </div>
   ))
